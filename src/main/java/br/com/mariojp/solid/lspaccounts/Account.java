@@ -4,11 +4,10 @@ public class Account {
     protected double balance;
 
     public void deposit(double amount){
+        if(amount<= 0){
+            throw new IllegalArgumentException("Depósito inválido.");
+        }
         this.balance += amount;
-    }
-
-    public void withdraw(double amount){
-        this.balance -= amount;
     }
 
     public double getBalance(){
